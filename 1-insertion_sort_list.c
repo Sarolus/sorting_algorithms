@@ -2,10 +2,10 @@
 
 /**
  * insertion_sort_list - sorts a doubly linked list of int in ascending order
- *  using the Insertion sort algorithm
- * 
+ * using the Insertion sort algorithm
+ *
  * @list: doubly linked list
- * 
+ *
  * Return: void
  */
 
@@ -22,7 +22,7 @@ void insertion_sort_list(listint_t **list)
 			tmp->prev->next = tmp->next;
 				if (tmp->next)
 					tmp->next->prev = tmp->prev;
-			
+
 			tmp->next = tmp->prev;
 			tmp->prev = tmp->next->prev;
 			tmp->next->prev = tmp;
@@ -34,4 +34,5 @@ void insertion_sort_list(listint_t **list)
 
 			print_list(*list);
 		}
+	}
 }
