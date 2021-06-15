@@ -6,19 +6,17 @@
  * 
  * @list: doubly linked list
  * 
- *Return: void
+ * Return: void
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp, *nextnode;
+	listint_t *tmp;
 
 	if (!list)
 		return;
 
-	for (tmp = (*list)->next; tmp; tmp = nextnode)
-	{
-		nextnode = tmp->next;
+	for (tmp = (*list)->next; tmp; tmp = tmp->next)
 		while (tmp->prev && tmp->prev->n > tmp->n)
 		{
 			tmp->prev->next = tmp->next;
@@ -35,6 +33,5 @@ void insertion_sort_list(listint_t **list)
 				tmp->prev->next = tmp;
 
 			print_list(*list);
-		}	
-	}
+		}
 }
