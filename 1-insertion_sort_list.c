@@ -2,21 +2,23 @@
 
 /**
  * insertion_sort_list - sorts a doubly linked list of int in ascending order
- * using the Insertion sort algorithm
+ *  using the Insertion sort algorithm
  *
  * @list: doubly linked list
  *
- * Return: void
+ *Return: void
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp;
+	listint_t *tmp, *nextnode;
 
 	if (!list)
 		return;
 
-	for (tmp = (*list)->next; tmp; tmp = tmp->next)
+	for (tmp = (*list)->next; tmp; tmp = nextnode)
+	{
+		nextnode = tmp->next;
 		while (tmp->prev && tmp->prev->n > tmp->n)
 		{
 			tmp->prev->next = tmp->next;
